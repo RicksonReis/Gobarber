@@ -8,30 +8,38 @@ import Button from '../../components/Button';
 
 import { Container, Content, Background } from './styles';
 
-const SignIn: React.FC = () => (
-  <Container>
-    <Content>
-      <img src={logoImg} alt="GoBarber" />
+const SignIn: React.FC = () => {
+  return (
+    <Container>
+      <Content>
+        <img src={logoImg} alt="GoBarber" />
 
-      <form>
-        <h1>Faça seu login</h1>
+        <form>
+          <h1>Faça seu login</h1>
 
-        <Input name="email" icon={FiMail} placeholder="E-mail" />
-        <Input name="password" icon={FiLock} type="password" placeholder="Senha" />
+          <Input name="email" icon={FiMail} placeholder="E-mail" />
 
-        <Button type="submit">Entrar</Button>
+          <Input
+            name="password"
+            icon={FiLock}
+            type="password"
+            placeholder="Senha"
+          />
 
-        <a href="forgot">Esqueci minha senha</a>
-      </form>
+          <Button type="submit">Entrar</Button>
 
-      <a href="signup">
-        <FiLogIn />
-        Criar conta
-      </a>
-    </Content>
+          <a href="forgot">Esqueci minha senha</a>
+        </form>
 
-    <Background />
-  </Container>
-);
+        <a href="signup">
+          <FiLogIn />
+          Criar conta
+        </a>
+      </Content>
+
+      <Background />
+    </Container>
+  );
+};
 
 export default SignIn;

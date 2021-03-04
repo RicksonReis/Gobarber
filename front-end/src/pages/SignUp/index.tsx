@@ -3,6 +3,7 @@ import { FiArrowLeft, FiUser, FiMail, FiLock } from 'react-icons/fi';
 import { FormHandles } from '@unform/core';
 import { Form } from '@unform/web';
 import * as Yup from 'yup';
+import { Link } from 'react-router-dom';
 
 import getValidationErrors from '../../utils/getValidationErrors';
 
@@ -11,7 +12,7 @@ import logoImg from '../../assets/logo.svg';
 import Input from '../../components/Input';
 import Button from '../../components/Button';
 
-import { Container, Content, Background } from './styles';
+import { Container, Content, Background, AnimationContainer } from './styles';
 
 const SignUp: React.FC = () => {
   const formRef = useRef<FormHandles>(null);
@@ -42,6 +43,7 @@ const SignUp: React.FC = () => {
     <Container>
       <Background />
       <Content>
+        <AnimationContainer>
         <img src={logoImg} alt="GoBarber" />
 
         <Form ref={formRef} onSubmit={handleSubmit}>
@@ -61,10 +63,11 @@ const SignUp: React.FC = () => {
           <Button type="submit">Cadastrar</Button>
         </Form>
 
-        <a href="signup">
+        <Link to="/">
           <FiArrowLeft />
           Voltar para login
-        </a>
+        </Link>
+        </AnimationContainer>
       </Content>
     </Container>
   );
